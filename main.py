@@ -7,8 +7,7 @@ import io
 # -------------------------
 # GEMINI API KEY
 # -------------------------
-API_KEY = "AIzaSyAYmiKMqpWRwNz9r6rNLgmc186IoYWSdzA"
-
+# -------------------------
 client = genai.Client(api_key=API_KEY)
 
 # -------------------------

@@ -1,244 +1,208 @@
 # Aidora-AI
 
-## Project Overview
+## Project Summary
 
-Aidora-AI is an intelligent AI assistant built using **Google Gemini AI and Google Cloud**. The system allows users to interact with an AI agent through a modern web interface where requests are processed by a cloud backend and analyzed using Gemini to generate intelligent responses.
+Aidora-AI is a **Real-Time Health Triage Assistant** that helps users receive quick guidance for minor health concerns using **camera input, voice interaction, and AI reasoning**.
 
-The goal of this project is to demonstrate how **multimodal AI agents can be integrated into real applications using Gemini and Google Cloud services**. The architecture separates the frontend, backend, and AI processing layers for scalability and maintainability.
+The system allows users to interact with an AI assistant through a web interface. Users can provide text, voice, or image input, and the system processes the request through a backend API and sends it to **Google Gemini AI** to generate a response.
 
-System architecture pipeline:
-
-User → Frontend → Backend → Gemini AI → Response → User
-
-The backend service is deployed on **Google Cloud Run**, enabling serverless and scalable deployment.
+The project follows a modular architecture with separate **frontend, backend, and AI processing layers**, making it easy to extend and deploy.
 
 ---
 
-## Features
+# Features
 
-### AI-Powered Interaction
-
-Uses **Google Gemini API** to understand user input and generate intelligent responses.
-
-### Cloud-Based Backend
-
-Backend services are deployed using **Google Cloud Run**.
-
-### Modular Architecture
-
-Separate layers for frontend, backend, and AI integration.
-
-### Image Handling
-
-Supports image processing through a dedicated handler module.
-
-### Triage Processing
-
-Processes and categorizes user requests before sending them to Gemini AI.
-
-### Scalable Deployment
-
-Serverless architecture using Google Cloud services.
+• Text-based health question answering
+• Voice input support
+• Camera image analysis for visible symptoms
+• AI-powered responses using Gemini AI
+• FastAPI backend API
+• React frontend interface
+• Modular project structure
 
 ---
 
-## Technologies Used
+# Technologies Used
 
-### Frontend
+## Frontend
 
 * React.js
 * JavaScript
 * HTML
 * CSS
 
-### Backend
+## Backend
 
 * Python
 * FastAPI
+* Uvicorn
 
-### Artificial Intelligence
+## AI Integration
 
 * Google Gemini API
 
-### Cloud Services
+## Libraries
 
-* Google Cloud Run
+* Pillow (image processing)
+* python-multipart (file upload support)
 
-### Development Tools
+## Development Tools
 
 * Git
 * GitHub
-* Draw.io (Architecture Diagram)
+* Draw.io (architecture diagram)
 
 ---
 
-## Project Structure
+# Project Structure
 
+```
 aidora-ai/
 
-backend/
-├── main.py
-├── triage.py
-├── image_handler.py
-├── requirements.txt
-└── .env.example
-
-frontend/
-└── src/
-├── App.js
-├── index.js
-└── components/
-├── Camera.jsx
-├── VoiceButton.jsx
-└── TriageResult.jsx
-
-docs/
-└── architecture-diagram.png
-
-README.md
-
----
-
-## System Architecture
-
-The system architecture consists of several layers.
-
-### User Layer
-
-Users interact with the system through a web interface.
-
-### Frontend Layer
-
-A React application captures user input and sends requests to the backend.
-
-### Backend Layer
-
-The backend processes requests, handles images, and communicates with Gemini AI.
-
-### AI Layer
-
-The Gemini API analyzes inputs and generates intelligent responses.
-
-### Response Layer
-
-Results are returned to the frontend and displayed to the user.
+├── backend/
+│   ├── main.py
+│   ├── triage.py
+│   ├── image_handler.py
+│   ├── requirements.txt
+│   └── .env.example
+│
+├── frontend/
+│   └── src/
+│       ├── App.js
+│       ├── index.js
+│       └── components/
+│           ├── Camera.jsx
+│           ├── VoiceButton.jsx
+│           └── TriageResult.jsx
+│
+├── docs/
+│   └── architecture-diagram.png
+│
+└── README.md
+```
 
 ---
 
-## Local Setup Instructions
+# How the System Works
 
-### 1 Clone Repository
+The system follows this flow:
 
+User → Frontend → Backend → Gemini AI → Response → User
+
+1. The **user interacts with the React frontend** using text, voice, or camera input.
+2. The frontend sends the request to the **FastAPI backend**.
+3. The backend processes the input using modules such as **triage logic and image handler**.
+4. The processed request is sent to **Google Gemini AI**.
+5. Gemini generates a response.
+6. The backend returns the result to the frontend.
+7. The response is displayed to the user.
+
+---
+
+# Local Setup Instructions
+
+## 1 Clone the repository
+
+```
 git clone https://github.com/Ayesha0000000/Aidora-AI.git
 cd Aidora-AI
+```
 
 ---
 
-### 2 Backend Setup
+## 2 Backend Setup
 
-Navigate to backend folder
+Navigate to the backend folder:
 
+```
 cd backend
+```
 
-Install dependencies
+Install dependencies:
 
+```
 pip install -r requirements.txt
+```
 
-Create environment variables
+Create environment variable for Gemini API:
 
+```
 GEMINI_API_KEY=your_api_key
+```
 
-Run backend server
+Run backend server:
 
+```
 uvicorn main:app --reload
+```
 
 Backend will run at:
 
-http://localhost:8000
+```
+http://127.0.0.1:8000
+```
 
 ---
 
-### 3 Frontend Setup
+## 3 Frontend Setup
 
-Navigate to frontend
+Navigate to the frontend folder:
 
+```
 cd frontend
+```
 
-Install dependencies
+Install dependencies:
 
+```
 npm install
+```
 
-Start frontend
+Start the frontend server:
 
+```
 npm start
+```
 
-Frontend will run at:
+Frontend runs at:
 
+```
 http://localhost:3000
+```
 
 ---
 
-## Cloud Deployment (Google Cloud Run)
-
-### 1 Install Google Cloud CLI
-
-https://cloud.google.com/sdk/docs/install
-
----
-
-### 2 Login to Google Cloud
-
-gcloud auth login
-
----
-
-### 3 Build Container Image
-
-gcloud builds submit --tag gcr.io/YOUR_PROJECT_ID/aidora-ai
-
----
-
-### 4 Deploy to Cloud Run
-
-gcloud run deploy aidora-ai 
---image gcr.io/YOUR_PROJECT_ID/aidora-ai 
---platform managed 
---region us-central1 
---allow-unauthenticated
-
-After deployment, Google Cloud Run will provide a public API endpoint.
-
----
-
-## Third-Party Integrations
+# Third-Party Integrations
 
 ### Google Gemini API
 
-Provides AI reasoning and response generation.
-
-### Google Cloud Run
-
-Serverless backend hosting.
-
-### React
-
-Frontend user interface framework.
+Used for generating AI responses and analyzing user input.
 
 ### FastAPI
 
-Backend API framework.
+Provides the backend API that processes requests.
+
+### React
+
+Used for building the frontend user interface.
 
 ---
 
-## Architecture Diagram
+# Architecture Diagram
 
-The architecture diagram for this project is located in:
+The system architecture diagram is located in:
 
+```
 docs/architecture-diagram.png
+```
 
 ---
 
-## Hackathon Submission
+# Disclaimer
+
+Aidora-AI provides **general health guidance only** and should not be used as a replacement for professional medical advice. Always consult a qualified healthcare professional for medical concerns.
+
+# Hackathon Submission
 
 This project is developed for:
 

@@ -1,250 +1,247 @@
-<<<<<<< HEAD
-# Aidora AI – Medical Assistant Backend
+# Aidora-AI
 
-Aidora AI is an AI‑powered medical assistant backend built using FastAPI.  
-It allows patients to interact with an AI system using text, voice, and camera input.
+## Project Overview
 
-The system uses Google's Gemini AI model to analyze symptoms and provide safe general medical guidance.
+Aidora-AI is an intelligent AI assistant built using **Google Gemini AI and Google Cloud**. The system allows users to interact with an AI agent through a modern web interface where requests are processed by a cloud backend and analyzed using Gemini to generate intelligent responses.
 
-⚠️ This project is designed for educational and research purposes. It does not replace professional medical advice.
+The goal of this project is to demonstrate how **multimodal AI agents can be integrated into real applications using Gemini and Google Cloud services**. The architecture separates the frontend, backend, and AI processing layers for scalability and maintainability.
 
-------------------------------------------------------------
+System architecture pipeline:
+
+User → Frontend → Backend → Gemini AI → Response → User
+
+The backend service is deployed on **Google Cloud Run**, enabling serverless and scalable deployment.
+
+---
 
 ## Features
 
-• AI powered medical question answering  
-• Voice input processing  
-• Camera image analysis for visible symptoms  
-• REST API backend built with FastAPI  
-• Easy integration with web frontend  
-• Real‑time AI responses using Gemini model  
+### AI-Powered Interaction
 
-------------------------------------------------------------
+Uses **Google Gemini API** to understand user input and generate intelligent responses.
 
-## Tech Stack
+### Cloud-Based Backend
 
-Backend Framework:
-FastAPI
+Backend services are deployed using **Google Cloud Run**.
 
-Server:
-Uvicorn
+### Modular Architecture
 
-AI Model:
-Google Gemini
+Separate layers for frontend, backend, and AI integration.
 
-Programming Language:
-Python
+### Image Handling
 
-Libraries:
-Pillow (image processing)  
-python-multipart (file upload support)
+Supports image processing through a dedicated handler module.
 
-------------------------------------------------------------
+### Triage Processing
 
-## API Endpoints
+Processes and categorizes user requests before sending them to Gemini AI.
 
-### 1. Server Status
+### Scalable Deployment
 
-GET /
+Serverless architecture using Google Cloud services.
 
-Returns server status.
+---
 
-Example response:
+## Technologies Used
 
-{
-  "message": "Aidora Medical AI API Running"
-}
+### Frontend
 
-------------------------------------------------------------
+* React.js
+* JavaScript
+* HTML
+* CSS
 
-### 2. Text Medical Assistant
+### Backend
 
-POST /health
+* Python
+* FastAPI
 
-Send a medical question as text.
+### Artificial Intelligence
 
-Example request:
+* Google Gemini API
 
-{
-  "question": "I have fever and headache for two days"
-}
+### Cloud Services
 
-Example response:
+* Google Cloud Run
 
-{
-  "type": "text",
-  "response": "Fever and headache may be caused by viral infection..."
-}
+### Development Tools
 
-------------------------------------------------------------
+* Git
+* GitHub
+* Draw.io (Architecture Diagram)
 
-### 3. Voice Input
-
-POST /voice
-
-Send speech converted to text from the frontend.
-
-Form Data:
-
-text = "I feel chest pain and dizziness"
-
-Example response:
-
-{
-  "type": "voice",
-  "patient_text": "I feel chest pain and dizziness",
-  "response": "Chest pain can have several causes..."
-}
-
-------------------------------------------------------------
-
-### 4. Vision / Camera Analysis
-
-POST /vision
-
-Upload an image captured from the camera showing visible symptoms such as:
-
-• Skin rash  
-• Wound  
-• Infection  
-• Swelling  
-• Eye redness  
-
-The AI analyzes the image and provides general medical guidance.
-
-Example response:
-
-{
-  "type": "vision",
-  "analysis": "The image appears to show skin irritation..."
-}
-
-------------------------------------------------------------
-
-## Installation
-
-Clone the repository from GitHub.
-
-git clone https://github.com/Ayesha0000000/Aidora-AI.git
-
-Move into the backend folder.
-
-cd aidora-backend
-
-------------------------------------------------------------
-
-## Create Virtual Environment
-
-Create a Python virtual environment.
-
-python -m venv venv
-
-Activate the environment.
-
-Windows:
-
-venv\Scripts\activate
-
-Linux / Mac:
-
-source venv/bin/activate
-
-------------------------------------------------------------
-
-## Install Dependencies
-
-Install required libraries.
-
-pip install -r requirements.txt
-
-------------------------------------------------------------
-
-## Environment Variables
-
-Set your Gemini API key.
-
-Windows:
-
-setx GEMINI_API_KEY "YOUR_API_KEY"
-
-Linux / Mac:
-
-export GEMINI_API_KEY="YOUR_API_KEY"
-
-------------------------------------------------------------
-
-## Run the Server
-
-Start the FastAPI server using Uvicorn.
-
-uvicorn main:app --reload
-
-Server will run at:
-
-http://127.0.0.1:8000
-
-------------------------------------------------------------
-
-## API Documentation
-
-FastAPI automatically generates interactive documentation.
-
-Open in browser:
-
-http://127.0.0.1:8000/docs
-
-You can test all endpoints directly from this page.
-
-------------------------------------------------------------
+---
 
 ## Project Structure
 
-aidora-backend
+aidora-ai/
 
-main.py  
-requirements.txt  
-README.md  
+backend/
+├── main.py
+├── triage.py
+├── image_handler.py
+├── requirements.txt
+└── .env.example
 
-------------------------------------------------------------
+frontend/
+└── src/
+├── App.js
+├── index.js
+└── components/
+├── Camera.jsx
+├── VoiceButton.jsx
+└── TriageResult.jsx
 
-## Future Improvements
+docs/
+└── architecture-diagram.png
 
-• Live camera streaming for real‑time analysis  
-• Voice conversation with AI assistant  
-• Patient history tracking  
-• Emergency symptom detection  
-• Deployment to cloud server  
+README.md
 
-------------------------------------------------------------
+---
 
-## Disclaimer
+## System Architecture
 
-This AI system provides general health information only.  
-It should not be used as a substitute for professional medical advice, diagnosis, or treatment.
+The system architecture consists of several layers.
 
-Always consult a qualified healthcare professional for serious medical conditions.
+### User Layer
 
-------------------------------------------------------------
+Users interact with the system through a web interface.
 
-## Author
+### Frontend Layer
 
-Hizar Abdullah
-=======
-# Aidora-AI
-Real-Time Health Triage Agent (Camera + Voice)
+A React application captures user input and sends requests to the backend.
 
-The  **Real-Time Health Triage Agent** is a live, multimodal AI system designed to provide immediate, intelligent guidance during minor medical concerns using a combination of camera input and voice interaction. The agent observes visual symptoms—such as skin rashes, minor injuries, or medication labels—while simultaneously engaging the user in a dynamic conversational loop to gather contextual information.
+### Backend Layer
 
-Unlike diagnostic tools, this system performs **triage assessment**, meaning it evaluates the urgency level of a condition rather than diagnosing diseases. By combining real-time vision analysis, contextual memory tracking, and bidirectional voice communication, the agent classifies cases into urgency tiers (low, moderate, high) and provides safe, actionable next-step guidance.
+The backend processes requests, handles images, and communicates with Gemini AI.
 
-The system is built on a live streaming architecture, enabling:
+### AI Layer
 
-* Continuous visual analysis
-* Natural voice-based interaction
-* Context retention across follow-up questions
-* Real-time reasoning and response generation
+The Gemini API analyzes inputs and generates intelligent responses.
 
-This solution addresses a critical gap in early-stage health decision-making—especially in regions where immediate medical consultation is not always accessible. It empowers users with structured, safety-aware guidance while clearly reinforcing that it does not replace professional medical care.
+### Response Layer
 
-In essence, the Real-Time Health Triage Agent functions as an intelligent first-response assistant, delivering rapid, multimodal assessment to support informed and timely health decisions.
->>>>>>> fbf943b1a921f8c104e30d3a0015c3f9fc8c6f29
+Results are returned to the frontend and displayed to the user.
+
+---
+
+## Local Setup Instructions
+
+### 1 Clone Repository
+
+git clone https://github.com/Ayesha0000000/Aidora-AI.git
+cd Aidora-AI
+
+---
+
+### 2 Backend Setup
+
+Navigate to backend folder
+
+cd backend
+
+Install dependencies
+
+pip install -r requirements.txt
+
+Create environment variables
+
+GEMINI_API_KEY=your_api_key
+
+Run backend server
+
+uvicorn main:app --reload
+
+Backend will run at:
+
+http://localhost:8000
+
+---
+
+### 3 Frontend Setup
+
+Navigate to frontend
+
+cd frontend
+
+Install dependencies
+
+npm install
+
+Start frontend
+
+npm start
+
+Frontend will run at:
+
+http://localhost:3000
+
+---
+
+## Cloud Deployment (Google Cloud Run)
+
+### 1 Install Google Cloud CLI
+
+https://cloud.google.com/sdk/docs/install
+
+---
+
+### 2 Login to Google Cloud
+
+gcloud auth login
+
+---
+
+### 3 Build Container Image
+
+gcloud builds submit --tag gcr.io/YOUR_PROJECT_ID/aidora-ai
+
+---
+
+### 4 Deploy to Cloud Run
+
+gcloud run deploy aidora-ai 
+--image gcr.io/YOUR_PROJECT_ID/aidora-ai 
+--platform managed 
+--region us-central1 
+--allow-unauthenticated
+
+After deployment, Google Cloud Run will provide a public API endpoint.
+
+---
+
+## Third-Party Integrations
+
+### Google Gemini API
+
+Provides AI reasoning and response generation.
+
+### Google Cloud Run
+
+Serverless backend hosting.
+
+### React
+
+Frontend user interface framework.
+
+### FastAPI
+
+Backend API framework.
+
+---
+
+## Architecture Diagram
+
+The architecture diagram for this project is located in:
+
+docs/architecture-diagram.png
+
+---
+
+## Hackathon Submission
+
+This project is developed for:
+
+Gemini Live Agent Challenge
+
+#GeminiLiveAgentChallenge

@@ -175,9 +175,9 @@ After deployment, Google Cloud provides a public endpoint URL for frontend-backe
 | Name | GitHub | Role / Responsibilities |
 |---|---|---|
 | **Ayesha** | [@Ayesha0000000](https://github.com/Ayesha0000000) | Error Solving, README Writing, Blog Writing, Frontend–Backend Integration |
-| **Hizar Abdullah** | — | Gemini API Setup, Python + FastAPI Server, Gemini AI Integration, Demo Video, GCP Deployment |
-| **Muhammad Mahaz Noor** | — | React Frontend UI (Camera View, Mic Button, Result Display), Slides Preparation |
-| **Muhammad Faraz** | — | Architecture Diagram (draw.io), Medium Blog Post (#GeminiLiveAgentChallenge) |
+| **Hizar Abdullah** | khizeristan | Gemini API Setup, Python + FastAPI Server, Gemini AI Integration, Demo Video, GCP Deployment |
+| **Muhammad Mahaz Noor** | mahaznoor| React Frontend UI (Camera View, Mic Button, Result Display), Slides Preparation |
+| **Muhammad Faraz** | Farax382 | Architecture Diagram (draw.io), Medium Blog Post (#GeminiLiveAgentChallenge) |
 
 ---
 

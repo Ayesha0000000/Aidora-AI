@@ -179,7 +179,9 @@ After deployment, Google Cloud provides a public endpoint URL for frontend-backe
 | **Muhammad Mahaz Noor** | mahaznoor| React Frontend UI (Camera View, Mic Button, Result Display), Slides Preparation |
 | **Muhammad Faraz** | Farax382 | Architecture Diagram (draw.io), Medium Blog Post (#GeminiLiveAgentChallenge) |
 
----
+## 📚 Documentation
+
+🌐 **Live Docs:** [https://aidora-doc-9f7q.vercel.app/](https://aidora-doc-9f7q.vercel.app/)
 
 ## ⚠️ Disclaimer
 

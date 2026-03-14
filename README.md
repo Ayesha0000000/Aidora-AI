@@ -16,11 +16,9 @@ Aidora-AI is a **multimodal AI health assistant** that lets users interact using
 
 Aidora-AI combines **computer vision, voice communication, and AI reasoning** to build an intelligent assistant capable of understanding user input and generating meaningful responses.
 
-**System Pipeline:**
+> 🏆 Built for the **[#GeminiLiveAgentChallenge](https://ai.google/)** — a platform that gave us the opportunity to build something truly meaningful. Without this challenge, Aidora would have remained just an idea. Thank you for pushing us to build for good.
 
-```
-User → Frontend → Backend → Gemini AI → Response → User
-```
+**System Pipeline:**
 
 ---
 
@@ -36,41 +34,13 @@ User → Frontend → Backend → Gemini AI → Response → User
 
 ---
 
-## 🏗️ System Architecture
+## ❤️ Acknowledgment
 
-```
-┌─────────────────────────────────────────┐
-│              USER LAYER                 │
-│         Browser / Mobile App            │
-└──────────────────┬──────────────────────┘
-                   │
-                   ▼
-┌─────────────────────────────────────────┐
-│            FRONTEND LAYER               │
-│   React.js — Camera · Voice · Display   │
-│   Camera.jsx · VoiceButton.jsx · text.js│
-└──────────────────┬──────────────────────┘
-                   │  HTTP Request
-                   ▼
-┌─────────────────────────────────────────┐
-│             BACKEND LAYER               │
-│       Python + FastAPI — main.py        │
-│   Processes requests, calls Gemini API  │
-└──────────────────┬──────────────────────┘
-                   │  Gemini API Call
-                   ▼
-┌─────────────────────────────────────────┐
-│               AI LAYER                  │
-│         Google Gemini API               │
-│   Multimodal reasoning & response gen   │
-└──────────────────┬──────────────────────┘
-                   │  AI Response
-                   ▼
-        Back to Frontend → User
+We are deeply grateful to the **[#GeminiLiveAgentChallenge](https://ai.google/)** for giving us the opportunity to build Aidora. This challenge didn't just give us a platform — it gave us a purpose. It pushed our team to think beyond code and build something that could genuinely help people in their most vulnerable moments. Thank you for making this possible.
 
-☁️  Entire Backend Deployed on Google Cloud Run (us-central1)
-```
+Developed using **Google Gemini AI** and **Google Cloud** technologies.
 
+Made with ❤️ by **Team Genix**
 ---
 
 ## 🛠️ Technology Stack
@@ -192,6 +162,8 @@ After deployment, Google Cloud provides a public endpoint URL for frontend-backe
 
 ## ❤️ Acknowledgment
 
-Developed for the **Google Gemini Live Agent Challenge** using **Google Gemini AI** and **Google Cloud** technologies.
+We are deeply grateful to the **[#GeminiLiveAgentChallenge](https://ai.google/)** for giving us the opportunity to build Aidora. This challenge didn't just give us a platform — it gave us a purpose. It pushed our team to think beyond code and build something that could genuinely help people in their most vulnerable moments. Thank you for making this possible.
+
+Developed using **Google Gemini AI** and **Google Cloud** technologies.
 
 Made with ❤️ by **Team Genix**

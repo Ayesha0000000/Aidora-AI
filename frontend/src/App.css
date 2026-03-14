@@ -21,12 +21,19 @@
   bottom: 100px; left: -100px;
 }
 
+/* ── Layout ── */
 .layout {
   position: relative; z-index: 1;
   display: grid;
   grid-template-columns: 220px 1fr;
   min-height: calc(100vh - 56px);
   padding-top: 56px;
+  transition: grid-template-columns 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Jab modes hidden — sidebar 0 par collapse ── */
+.layout.modes-hidden {
+  grid-template-columns: 0px 1fr;
 }
 
 .main {
@@ -34,4 +41,43 @@
   flex-direction: column;
   height: calc(100vh - 56px);
   overflow: hidden;
+  min-width: 0;
+}
+
+/* ── Mobile backdrop overlay ── */
+.mobile-overlay {
+  display: none;
+}
+
+/* ── Tablet / Mobile ── */
+@media (max-width: 768px) {
+  /* Layout hamesha full width — sidebar floating overlay hai */
+  .layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Dark backdrop — tap karo to sidebar band ho */
+  .mobile-overlay {
+    display: block;
+    position: fixed;
+    inset: 56px 0 0 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(3px);
+    z-index: 199;
+    animation: fadeIn 0.2s ease;
+  }
+
+  .main {
+    height: calc(100vh - 56px);
+  }
+}
+
+@media (max-width: 480px) {
+  .ambient-1 { width: 300px; height: 300px; }
+  .ambient-2 { width: 200px; height: 200px; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }

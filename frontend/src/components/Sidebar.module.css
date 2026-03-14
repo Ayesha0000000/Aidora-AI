@@ -1,9 +1,33 @@
+/* ── Sidebar wrapper — collapse animation ── */
 .aside {
-  border-right: 1px solid var(--line);
-  padding: 28px 0;
   position: sticky; top: 56px;
   height: calc(100vh - 56px);
+  overflow: hidden;
+  border-right: 1px solid var(--line);
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease;
+}
+
+.aside.visible {
+  width: 220px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.aside.hidden {
+  width: 0;
+  opacity: 0;
+  pointer-events: none;
+  border-right: none;
+}
+
+/* ── Inner content fixed width — squish nahi hoga ── */
+.inner {
+  width: 220px;
+  height: 100%;
   display: flex; flex-direction: column;
+  padding: 28px 0;
+  overflow: hidden;
 }
 
 .section {
@@ -19,6 +43,7 @@
   padding: 0 8px;
   margin-bottom: 6px;
   margin-top: 8px;
+  white-space: nowrap;
 }
 
 .navItem {
@@ -31,6 +56,7 @@
   color: var(--muted);
   font-weight: 400;
   user-select: none;
+  white-space: nowrap;
 }
 
 .navItem:hover { background: var(--line); color: var(--text); }
@@ -40,6 +66,8 @@
   color: var(--accent);
   font-weight: 500;
 }
+
+.navLabel { overflow: hidden; }
 
 .icon {
   width: 16px; height: 16px;
@@ -56,6 +84,7 @@
   margin-top: auto;
   padding: 16px;
   border-top: 1px solid var(--line);
+  flex-shrink: 0;
 }
 
 .disclaimer {
@@ -66,4 +95,55 @@
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--ink2);
+}
+
+/* ── Mobile — fixed overlay, left se slide ── */
+@media (max-width: 768px) {
+  .aside {
+    position: fixed;
+    top: 56px; left: 0;
+    height: calc(100vh - 56px);
+    z-index: 200;
+    background: var(--ink);
+    border-right: 1px solid var(--line2) !important;
+    box-shadow: 6px 0 40px rgba(0, 0, 0, 0.6);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s ease;
+  }
+
+  .aside.visible {
+    width: 240px;
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .aside.hidden {
+    width: 240px;
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .inner {
+    width: 240px;
+  }
+
+  .navItem {
+    padding: 12px 14px;
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aside.visible,
+  .aside.hidden {
+    width: 78vw;
+    max-width: 270px;
+  }
+
+  .inner {
+    width: 78vw;
+    max-width: 270px;
+  }
 }

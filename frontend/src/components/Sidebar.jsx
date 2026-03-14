@@ -29,25 +29,28 @@ const items = [
   },
 ];
 
-export default function Sidebar({ active, onSelect }) {
+// NEW — modesVisible prop add kiya
+export default function Sidebar({ active, onSelect, modesVisible }) {
   return (
-    <aside className={styles.aside}>
-      <div className={styles.section}>
-        <div className={styles.label}>Modes</div>
-        {items.map(item => (
-          <div
-            key={item.id}
-            className={`${styles.navItem} ${active === item.id ? styles.active : ''}`}
-            onClick={() => onSelect(item.id)}
-          >
-            <span className={styles.icon}>{item.icon}</span>
-            {item.label}
+    <aside className={`${styles.aside} ${modesVisible ? styles.visible : styles.hidden}`}>
+      <div className={styles.inner}>
+        <div className={styles.section}>
+          <div className={styles.label}>Modes</div>
+          {items.map(item => (
+            <div
+              key={item.id}
+              className={`${styles.navItem} ${active === item.id ? styles.active : ''}`}
+              onClick={() => onSelect(item.id)}
+            >
+              <span className={styles.icon}>{item.icon}</span>
+              <span className={styles.navLabel}>{item.label}</span>
+            </div>
+          ))}
+        </div>
+        <div className={styles.bottom}>
+          <div className={styles.disclaimer}>
+            For informational use only. Always consult a qualified healthcare professional.
           </div>
-        ))}
-      </div>
-      <div className={styles.bottom}>
-        <div className={styles.disclaimer}>
-          For informational use only. Always consult a qualified healthcare professional.
         </div>
       </div>
     </aside>

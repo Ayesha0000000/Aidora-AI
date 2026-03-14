@@ -18,7 +18,7 @@ Aidora-AI combines **computer vision, voice communication, and AI reasoning** to
 
 > 🏆 Built for the **[#GeminiLiveAgentChallenge](https://ai.google/)** — a platform that gave us the opportunity to build something truly meaningful. Without this challenge, Aidora would have remained just an idea. Thank you for pushing us to build for good.
 
-**System Pipeline:**
+
 
 ---
 
@@ -33,14 +33,10 @@ Aidora-AI combines **computer vision, voice communication, and AI reasoning** to
 | 🧩 **Modular Architecture** | Clear separation of Frontend, Backend, and AI Integration |
 
 ---
+## 🏗️ System Architecture
 
-## ❤️ Acknowledgment
+![Aidora Architecture Diagram](https://raw.githubusercontent.com/Ayesha0000000/Aidora-AI/main/docs/Detail%20digram.png)
 
-We are deeply grateful to the **[#GeminiLiveAgentChallenge](https://ai.google/)** for giving us the opportunity to build Aidora. This challenge didn't just give us a platform — it gave us a purpose. It pushed our team to think beyond code and build something that could genuinely help people in their most vulnerable moments. Thank you for making this possible.
-
-Developed using **Google Gemini AI** and **Google Cloud** technologies.
-
-Made with ❤️ by **Team Genix**
 ---
 
 ## 🛠️ Technology Stack

@@ -8,7 +8,7 @@
 
 Aidora-AI is a **multimodal AI health assistant** that lets users interact using **camera input** and **voice commands**. The system captures input from a modern web interface and processes requests through **Google Gemini AI**.
 
-> Developed for the **Google Gemini Live Agent Challenge** using Google Gemini AI and Google Cloud technologies.
+
 
 ---
 

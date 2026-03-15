@@ -42,7 +42,7 @@ Aidora-AI combines **computer vision, voice communication, and AI reasoning** to
 
 Watch Aidora-AI in action:
 
-[![Aidora-AI Demo Video](https://img.youtube.com/vi/9mqi-UfkDYA/maxresdefault.jpg)](https://www.youtube.com/watch?v=9mqi-UfkDYA)
+[![Aidora-AI Demo Video](https://www.youtube.com/watch?v=CniiS-kSj9c)/maxresdefault.jpg)](https://www.youtube.com/watch?v=CniiS-kSj9c)
 
 > 🔗 **[Click to Watch Full Demo on YouTube](https://www.youtube.com/watch?v=9mqi-UfkDYA)**
 

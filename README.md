@@ -38,6 +38,13 @@ Aidora-AI combines **computer vision, voice communication, and AI reasoning** to
 ![Aidora Architecture Diagram](https://raw.githubusercontent.com/Ayesha0000000/Aidora-AI/main/docs/Detail%20digram.png)
 
 ---
+## 🎬 Demo Video
+
+Watch Aidora-AI in action:
+
+[![Aidora-AI Demo Video](https://img.youtube.com/vi/9mqi-UfkDYA/maxresdefault.jpg)](https://www.youtube.com/watch?v=9mqi-UfkDYA)
+
+> 🔗 **[Click to Watch Full Demo on YouTube](https://www.youtube.com/watch?v=9mqi-UfkDYA)**
 
 ## 🛠️ Technology Stack
 
@@ -50,6 +57,9 @@ Aidora-AI combines **computer vision, voice communication, and AI reasoning** to
 | **Tools** | Git, GitHub, Draw.io |
 
 ---
+## 🖥️ UI Preview
+
+![Aidora-AI Voice Page UI](https://github.com/Ayesha0000000/Aidora-AI/blob/main/Voice%20page%20ui.png?raw=true)
 
 ## 📁 Project Structure
 
@@ -137,6 +147,8 @@ After deployment, Google Cloud provides a public endpoint URL for frontend-backe
 ---
 
 ## 🤝 Contributors — Team Genix
+🌟 All members of Team Genix are **Active Members of Google Developer Groups (GDG)** — proudly building with Google technologies and contributing to the developer community.
+
 
 | Name | GitHub | Role / Responsibilities |
 |---|---|---|

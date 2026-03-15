@@ -160,7 +160,8 @@ After deployment, Google Cloud provides a public endpoint URL for frontend-backe
 ## 📚 Documentation
 
 🌐 **Live Docs:** [https://aidora-doc-9f7q.vercel.app/](https://aidora-doc-9f7q.vercel.app/)
-   
+   ## 🏆 Hackathon Submission
+👉 **[View Our Devpost Submission](https://devpost.com/submit-to/28633-gemini-live-agent-challenge/manage/submissions)**
 
 ## ⚠️ Disclaimer
 

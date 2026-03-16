@@ -157,8 +157,7 @@ After deployment, Google Cloud provides a public endpoint URL for frontend-backe
 
 🌐 **Live Docs:** [https://aidora-doc-9f7q.vercel.app/](https://aidora-doc-9f7q.vercel.app/)
    ## 🏆 Hackathon Submission
-👉 **[View Our Devpost Submission](https://devpost.com/submit-to/28633-gemini-live-agent-challenge/manage/submissions)**
-
+👉 **[View Our Devpost Submission](https://devpost.com/software/aidora-ai-real-time-health-triage-agent)**
 ## ⚠️ Disclaimer
 
 > Aidora-AI is designed for AI interaction and demonstration purposes.
